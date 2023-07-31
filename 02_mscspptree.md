@@ -27,5 +27,6 @@ java -jar astral.5.7.8.jar -i <gene_trees> -i <imap> -o <out_name>
 
 ## SVDquartets
 
-`svdquartets` is an algorithm that computes species trees directly from SNP data. However, it is not a full-likelihood approache since its summarizes the data as pooled site-pattern counts. This algorithm is implemented in <span style="font-variant: small-caps;">PAUP*</span>.
+`svdquartets` is an algorithm that computes species trees directly from SNP data. However, it is not a full-likelihood approache since it summarizes the data as pooled site-pattern counts. This algorithm is implemented in <span style="font-variant: small-caps;">PAUP*</span>, that can be downloaded from [http://phylosolutions.com/paup-test/](http://phylosolutions.com/paup-test/).
 
+We will use a SNPs data matrix collected from individuals belonging to the *Liolaemus kingii* group. This group comprises lizards distributed on the Patagonian Steppe.

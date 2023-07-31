@@ -10,7 +10,7 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 
-We will use a dataset of Philippine Puddle Frogs (_Occidozyga laevis_ complex) from Chan et al ([2021](https://doi.org/10.1093/sysbio/syab034)). The dataset consists of genome-wide exons and introns obtained through sequence capture, however, we will only use a subset of XXX introns.
+We will use a dataset of Philippine Puddle Frogs (_Occidozyga laevis_ complex) from Chan et al. ([2021](https://doi.org/10.1093/sysbio/syab034)). The dataset consists of genome-wide exons and introns obtained through sequence capture, however, we will only use a subset of XXX introns.
 
 To estimate trees from these exons, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference using Maximum likelihood. We also will estimate branch supports through Bootstrap, and perform a partitioned analysis
 

@@ -10,14 +10,13 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 
-We will use a dataset of Philippine Puddle Frogs (_Occidozyga laevis_ complex) from Chan et al. ([2021](https://doi.org/10.1093/sysbio/syab034)). The dataset consists of genome-wide exons and introns obtained through sequence capture, however, we will only use a subset of XXX introns.
+We will use a dataset of Philippine puddle frogs (_Occidozyga laevis_ complex) from Chan et al. ([2021](https://doi.org/10.1093/sysbio/syab034)). It consists of genome-wide exons and introns obtained through sequence capture, however, we will only use a subset of XXX introns.
 
-To estimate trees from these exons, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference using Maximum likelihood. We also will estimate branch supports through Bootstrap, and perform a partitioned analysis
-
+To estimate trees from these introns, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference using Maximum likelihood. We will also estimate branch supports through Bootstrap
 
 # Download and install
 
-Download the latest version from https://github.com/stamatak/standard-RAxML/archive/refs/heads/master.zip. Alternatively, if you use UNIX and have git, in the terminal type:
+Download the latest version from https://github.com/stamatak/standard-RAxML/archive/refs/heads/master.zip. Alternatively, if you use UNIX and have `git` installed, in the terminal type:
 
 ```sh
 git clone https://github.com/stamatak/standard-RAxML.git
@@ -27,11 +26,15 @@ to download the repo. Uncompress the `.zip` and move to the newly created folder
 
 ## Windows
 
-Windows executables are already included. To run the software, open the command prompt (`cmd.exe`) and type the path to the executable
+Windows executables are already included in the folder. To run the software, open the command prompt (`cmd.exe`) and type the path to the executable
 
 ```powershell
 .\raxmlHPC
+# The following error message must appear:
+# Error, you must specify a model of substitution with the "-m" option
 ```
+
+Be aware that Windows uses the backslash `\` as the path-component separator, while Unix uses the forward slash `/`.
 
 ## Unix
 
@@ -74,17 +77,18 @@ Further command options are detailed in the software manual.
 
 The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file.
 
-## Loop over the n introns
-
-
 
 # Bootstrapping
+
+The bootstrap is a statistical approach for assessing the accuracy of estimates that consists of analyzing replicates of the original data. Its use in phylogenetic inference was introduced by Felsenstein ([1985](https://doi.org/10.1111/j.1558-5646.1985.tb00420.x)) to assess "confidence" for each clade in a tree. More specifically, in each of $N$ cycles ($N$ = 100 or 1000), the algorithm samples sites with replacement from the original alignment until the original number of sites is reached. A tree is estimated from each replicate, and the proportion of times that each clade is inferred provides a measure for its support.
+
+The following code allows to infer a tree and estimate branch supports:
 
 ```sh
 ./raxmlHPC -s <input> -n boot -m GTRGAMMA -f a -N 100 -p -x <random number> -x <random number>
 ```
 
-- `-f`: Specify the algorithm. If nothing is specified (like our first run), it executes the standard hill climbing algorithm to perform the tree search by default (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run
+- `-f`: Specify the algorithm. If nothing is specified (like in our first run), by default it executes the standard hill climbing algorithm to perform the tree search (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run
 - `-N`: number of bootstrap replicates
 - `-x`: specify an integer number (random seed) and turn on rapid bootstrapping
 

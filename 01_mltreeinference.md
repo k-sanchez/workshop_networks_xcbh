@@ -14,7 +14,7 @@ We will use a dataset of Philippine puddle frogs (_Occidozyga laevis_ complex) f
 
 To estimate trees from these introns, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference using Maximum likelihood. We will also estimate branch supports through Bootstrap
 
-# Download and install
+## Download and install
 
 Download the latest version from https://github.com/stamatak/standard-RAxML/archive/refs/heads/master.zip. Alternatively, if you use UNIX and have `git` installed, in the terminal type:
 
@@ -24,7 +24,7 @@ git clone https://github.com/stamatak/standard-RAxML.git
 
 to download the repo. Uncompress the `.zip` and move to the newly created folder.
 
-## Windows
+### Windows
 
 Windows executables are already included in the folder. To run the software, open the command prompt (`cmd.exe`) and type the path to the executable
 
@@ -36,7 +36,7 @@ Windows executables are already included in the folder. To run the software, ope
 
 Be aware that Windows uses the backslash `\` as the path-component separator, while Unix uses the forward slash `/`.
 
-## Unix
+### Unix
 
 Requires to be compiled before use.
 
@@ -60,7 +60,7 @@ This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on 
 # Error, you must specify a model of substitution with the "-m" option
 ```
 
-# Standard tree inference
+## Tree inference
 
 We will estimate a tree of one intron based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model):
 
@@ -78,7 +78,7 @@ Further command options are detailed in the software manual.
 The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file.
 
 
-# Bootstrapping
+## Bootstrapping
 
 The bootstrap is a statistical approach for assessing the accuracy of estimates that consists of analyzing replicates of the original data. Its use in phylogenetic inference was introduced by Felsenstein ([1985](https://doi.org/10.1111/j.1558-5646.1985.tb00420.x)) to assess "confidence" for each clade in a tree. More specifically, in each of $N$ cycles ($N$ = 100 or 1000), the algorithm samples sites with replacement from the original alignment until the original number of sites is reached. A tree is estimated from each replicate, and the proportion of times that each clade is inferred provides a measure for its support.
 

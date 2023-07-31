@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  PhyloNetworks
+title: "PhyloNetworks"
 categories: jekyll update
 usemathjax: true
 ---

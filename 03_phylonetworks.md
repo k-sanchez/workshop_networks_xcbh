@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "<span style="font-variant: small-caps;">PhyloNetworks</span>"
+title:  PhyloNetworks
 categories: jekyll update
 usemathjax: true
 ---

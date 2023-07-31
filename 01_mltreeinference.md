@@ -16,7 +16,7 @@ To estimate trees from these introns, we will rely on <span style="font-variant:
 
 ## Download and install
 
-Download the latest version from https://github.com/stamatak/standard-RAxML/archive/refs/heads/master.zip. Alternatively, if you use UNIX and have `git` installed, in the terminal type:
+Download the latest version from https://github.com/stamatak/standard-RAxML/archive/refs/heads/master.zip. Alternatively, if you use UNIX and have `git` installed, open the terminal and type:
 
 ```sh
 git clone https://github.com/stamatak/standard-RAxML.git

@@ -65,7 +65,7 @@ This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on 
 We will estimate a tree of one intron based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model):
 
 ```sh
-./raxmlHPC -s <input> -n stand -m GTRGAMMA -p <random number>
+./raxmlHPC -s intron1.phylip -n stand -m GTRGAMMA -p 456745
 ```
 
 - `-s`: name of the sequence file (or path/name if the file is in a different folder)
@@ -85,11 +85,11 @@ The bootstrap is a statistical approach for assessing the accuracy of any estima
 The following code allows to infer a tree and estimate branch supports in a single run:
 
 ```sh
-./raxmlHPC -s <input> -n boot -m GTRGAMMA -f a -N 100 -p -x <random number> -x <random number>
+./raxmlHPC -s intron1.phylip -n boot -m GTRGAMMA -f a -N 100 -p -x 563454
 ```
 
 - `-f`: Specify the algorithm. If nothing is specified (like in our first run), by default it executes the standard hill climbing algorithm to perform the tree search (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run
 - `-N`: number of bootstrap replicates
-- `-x`: specify an integer number (random seed) and turn on rapid bootstrapping
+- `-x`: Specify an integer number (random seed) and turn on rapid bootstrapping
 
 The Bootstrap trees (100 in the example) are written in `RAxML_bootstrap.boot` and the ML tree with support values is written in `RAxML_bipartitions.boot`.

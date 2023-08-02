@@ -1,7 +1,7 @@
 title: Phylogenetic network reconstruction
 author:
-  name: Kevin I. Sánchez
-  email: kevin.imanol.sanchez@gmail.com
+  name: Kevin I. Sánchez and Melisa Olave
+  email: kevin.imanol.sanchez@gmail.com; olave.mel@gmail.com
 baseurl: "/workshop_networks_xcbh" # the subpath of your site, e.g. /blog
 url: "k-sanchez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  k-sanchez

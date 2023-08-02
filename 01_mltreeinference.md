@@ -12,11 +12,11 @@ https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 We will use a dataset of Philippine puddle frogs (_Occidozyga laevis_ complex) from Chan et al. ([2021](https://doi.org/10.1093/sysbio/syab034)). It consists of genome-wide exons and introns obtained through sequence capture, however, we will only use a subset of XXX introns.
 
-To estimate trees from these introns, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference using Maximum likelihood. We will also estimate branch supports through Bootstrap
+To estimate trees from these introns, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference based on maximum likelihood (ML). We will also estimate branch supports through Bootstrap
 
 ## Download and install
 
-Download the latest version from [GitHub](https://github.com/stamatak/standard-RAxML/archive/refs/heads/master.zip). Alternatively, if you use UNIX and have `git` installed, open the terminal and type:
+Download the latest version from [GitHub](https://github.com/stamatak/standard-RAxML/archive/refs/heads/master.zip). Alternatively, if you use UNIX (Linux or Mac) and have `git` installed, open the terminal and type:
 
 ```sh
 git clone https://github.com/stamatak/standard-RAxML.git
@@ -38,7 +38,7 @@ Be aware that Windows uses the backslash `\` as the path-component separator, wh
 
 ### Unix
 
-Requires to be compiled before use.
+First, we need to compile the software before it can be used.
 
 Install the standard version:
 
@@ -49,7 +49,7 @@ make -f Makefile.gcc # install the standard version
 Install the multicore version:
 
 ```sh
-rm *.o # remove previously compiled files 
+rm *.o # remove previously compiled files if you installed a different version
 make -f Makefile.PTHREADS.gcc
 ```
 This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on the compiled version) that can be called:
@@ -69,9 +69,9 @@ We will estimate a tree of one intron based on the $\text{GTR} + \Gamma$ model o
 ```
 
 - `-s`: name of the sequence file (or path/name if the file is in a different folder)
-- `-n`: name of the output files (here the files will have `.stand` appended to the end)
+- `-n`: name of the output files (the files generated during the run will have `.stand` appended to the end)
 - `-m`: substitution model
-- `-p`: random number seed to generate parsimony starting tree
+- `-p`: random number seed to generate parsimony starting tree (can be any integer)
 
 Further command options are detailed in the software manual.
 
@@ -80,9 +80,9 @@ The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file.
 
 ## Bootstrapping
 
-The bootstrap is a statistical approach for assessing the accuracy of estimates that consists of analyzing replicates of the original data. Its use in phylogenetic inference was introduced by Felsenstein ([1985](https://doi.org/10.1111/j.1558-5646.1985.tb00420.x)) to assess "confidence" for each clade in a tree. More specifically, in each of $N$ cycles ($N$ = 100 or 1000), the algorithm samples sites with replacement from the original alignment until the original number of sites is reached. A tree is estimated from each replicate, and the proportion of times that each clade is inferred provides a measure for its support.
+The bootstrap is a statistical approach for assessing the accuracy of any estimation (continuous parameters or clades in a tree); it consists of analyzing replicates of the original data. Its use in phylogenetic inference was introduced by Felsenstein ([1985](https://doi.org/10.1111/j.1558-5646.1985.tb00420.x)) to assess "confidence" for each clade in a tree. More specifically, in each of $N$ cycles ($N$ = 100 or 1000), the algorithm samples sites with replacement from the original alignment until the original number of sites is reached. A tree is estimated from each replicate, and the proportion of times that each clade is inferred provides a measure for its support. The support values are usually placed in the maximum likelihood tree.
 
-The following code allows to infer a tree and estimate branch supports:
+The following code allows to infer a tree and estimate branch supports in a single run:
 
 ```sh
 ./raxmlHPC -s <input> -n boot -m GTRGAMMA -f a -N 100 -p -x <random number> -x <random number>
@@ -92,4 +92,4 @@ The following code allows to infer a tree and estimate branch supports:
 - `-N`: number of bootstrap replicates
 - `-x`: specify an integer number (random seed) and turn on rapid bootstrapping
 
-The Bootstrap trees are written in `RAxML_bootstrap.boot` and the ML tree with support values is written in `RAxML_bipartitions.boot`.
+The Bootstrap trees (100 in the example) are written in `RAxML_bootstrap.boot` and the ML tree with support values is written in `RAxML_bipartitions.boot`.

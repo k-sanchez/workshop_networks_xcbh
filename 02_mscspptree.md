@@ -39,7 +39,7 @@ java -jar astral.5.7.8.jar -i intron_trees.trees -o puddle_tree.tre
 
 `svdquartets` is an algorithm that computes species trees directly from SNP data. However, it is not a full-likelihood approach since the data is summarized as pooled site-pattern counts. This algorithm is implemented in <span style="font-variant: small-caps;">PAUP*</span> (it can be downloaded from [http://phylosolutions.com/paup-test/](http://phylosolutions.com/paup-test/)).
 
-We will use a SNPs matrix collected through RADseq from species belonging to the *Liolaemus kingii* clade. This clade comprises lizards distributed in the Patagonian Steppe and is characterized by a complex diversification history as a result of rapid diversifications and gene flow between species ([Sánchez et al. 2023](https://doi.org/10.1093/sysbio/syad019)).
+We will use a SNPs matrix collected through RADseq from species belonging to the *Liolaemus kingii* group. This group comprises lizards distributed in the Patagonian Steppe and is characterized by a complex diversification history as a result of rapid diversifications and gene flow between species ([Sánchez et al. 2023](https://doi.org/10.1093/sysbio/syad019)).
 
 There are three ways to use PAUP: 
 

@@ -18,3 +18,4 @@ Phylogenetic networks are an extension of phylogenetic trees used to model gene 
  
 ![](./imgs/CFs.png)*CFs calculation*
 
+Hence, it is required the estimation of gene trees to obtain the table of CFs required to estimate the network. Interestingly, an R function was developed to compute the table of CFs directly from a SNPs matrix ([Olave and Meyer 2020](https://doi.org/10.1093/sysbio/syaa005)), which we will be using here on the *Liolaemus* datset.

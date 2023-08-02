@@ -13,7 +13,7 @@ https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 Phylogenetic networks are an extension of phylogenetic trees used to model gene flow events between species or populations (see the figure). Specifically, these  events are modelled by reticulation edges that summarizes gene flow that might have occurred over a period of time into a single instantaneous event. These edges have a parameter associated ($\varphi$) that represents the proportion of alleles transferred during the entire period of gene flow.
 
 <p style="text-align:center;">
-    <img src="./assets/network.svg" width="20%"/>
+    <img src="./assets/network.svg" width="30%"/>
 </p>
  
 A popular method to estimate phylogenetic networks is <span style="font-variant: small-caps;">PhyloNetworks</span> ([Solís-Lemus et al. 2017](https://doi.org/10.1093/molbev/msx235)). It is based on a pseudolikelihood function over concordance factors (CFs) of quartets of taxa (four taxa), wich increase computational tractability. CFs are calculated as the proportion of gene trees supporting the three possible splits in a given quartet:
@@ -72,7 +72,7 @@ plot(net_h1, showgamma = true, style = :majortree, arrowlen = 0.2)
 
 ```
 
-The networks returned by the method are not rooted, so it is convinient to include an outgroup species in the datset to properly root the networks after the estimation. In ur dataset, the outgroup species is *Liolaemus lineomaculatus*:
+The networks returned by the method are not rooted, so it is convinient to include an outgroup species in the datset to properly root the networks after the estimation. In our dataset, the outgroup species is *Liolaemus lineomaculatus*:
 ```julia
 net_h1.names # explore the names of the terminals
 rootatnode!(net_h1, "lineomaculatus") # root at the outgroup node

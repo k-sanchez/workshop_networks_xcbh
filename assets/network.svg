@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="572.43146"
+   version="1.1"
+   viewBox="0 0 486.04921 572.43145"
+   width="486.04922"
+   x="0px"
+   y="0px"
+   id="svg18"
+   sodipodi:docname="network.svg"
+   inkscape:version="1.3 (1:1.3+202307231459+0e150ed6c4)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22">
+    <marker
+       style="overflow:visible"
+       id="TriangleStart"
+       refX="-0.25656468"
+       refY="-2.1126707e-09"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="4.1318007"
+       markerHeight="3.1104102"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="none">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="0.5522167"
+     inkscape:cx="522.43983"
+     inkscape:cy="140.34346"
+     inkscape:window-width="1680"
+     inkscape:window-height="1014"
+     inkscape:window-x="1368"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g15291">
+    <sodipodi:guide
+       position="752.34785,708.84512"
+       orientation="0,-1"
+       id="guide1848"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="275.47419,271.6509"
+       orientation="0,-1"
+       id="guide1850"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="274.31949,243.85866"
+       orientation="1,0"
+       id="guide15022"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="21.14126,308.98425"
+       orientation="1,0"
+       id="guide1087"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="813.55776,200.48424"
+       orientation="1,0"
+       id="guide12394"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="80.85969,200.48422"
+       orientation="1,0"
+       id="guide13223"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="1263.5784,413.98424"
+       orientation="0,-1"
+       id="guide382"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="467.77921,200.48422"
+       orientation="1,0"
+       id="guide1226"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="620.09795,200.48424"
+       orientation="1,0"
+       id="guide1228"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="997.42464,221.65759"
+       orientation="1,0"
+       id="guide1230"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="11.31552,614.1637"
+       orientation="1,0"
+       id="guide557"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <g
+     id="g1064"
+     transform="matrix(-1,0,0,1,1248.3198,-382.63911)">
+    <g
+       id="g15291-2"
+       transform="translate(411.0283)">
+      <g
+         id="g15477">
+        <g
+           id="g15291"
+           transform="translate(-411.0283)">
+          <path
+             id="line6"
+             style="fill:none;stroke:#898989;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none"
+             d="m 974,469 193.46,427.00002"
+             sodipodi:nodetypes="cc" />
+          <path
+             id="line10-3-5"
+             style="fill:none;stroke:#898989;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none"
+             d="m 974.00007,387.63911 -6e-5,81.61821"
+             sodipodi:nodetypes="cc" />
+          <path
+             id="line10-3-5-3-3"
+             style="fill:none;stroke:#898989;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none"
+             d="M 1070.73,682.50001 974.0002,896.00002"
+             sodipodi:nodetypes="cc" />
+          <text
+             style="font-size:60px;font-family:'DejaVu Sans';fill:#003ca3;fill-opacity:1;stroke:none"
+             x="-802.17059"
+             y="953.75055"
+             id="text16"
+             transform="scale(-1,1)"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#003ca3;fill-opacity:1"
+               id="tspan1008">C</tspan></text>
+          <path
+             id="line14"
+             style="fill:none;stroke:#898989;stroke-width:10;stroke-linecap:round;stroke-miterlimit:10;stroke-dasharray:none"
+             d="M 974,469 780.54047,896.00002"
+             sodipodi:nodetypes="cc" />
+          <text
+             style="font-size:60px;font-family:'DejaVu Sans';fill:#003ca3;fill-opacity:1;stroke:none"
+             x="-1189.9302"
+             y="954.19055"
+             id="text16-7"
+             transform="scale(-1,1)"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#003ca3;fill-opacity:1"
+               id="tspan1008-5">A</tspan></text>
+          <text
+             style="font-size:60px;font-family:'DejaVu Sans';fill:#e50000;fill-opacity:1;stroke:none"
+             x="-1095.8"
+             y="794.89752"
+             id="text16-7-36"
+             transform="scale(-1,1)"><tspan
+               style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:60px;font-family:'Latin Modern Math';-inkscape-font-specification:'Latin Modern Math';fill:#e50000;fill-opacity:1"
+               id="tspan1008-5-7">𝜑</tspan></text>
+          <text
+             style="font-size:40px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+             x="-1155.3322"
+             y="473.22"
+             id="text16-7-3"
+             transform="scale(-1,1)"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';fill:#000000;fill-opacity:1"
+               id="tspan1008-5-6">speciation</tspan></text>
+          <text
+             style="font-size:40px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+             x="-1249.4398"
+             y="691.72003"
+             id="text16-7-3-7"
+             transform="scale(-1,1)"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';fill:#000000;fill-opacity:1"
+               id="tspan1008-5-6-5">speciation</tspan></text>
+          <text
+             style="font-size:60px;font-family:'DejaVu Sans';fill:#003ca3;fill-opacity:1;stroke:none"
+             x="-994.61035"
+             y="954.19055"
+             id="text16-7-67"
+             transform="scale(-1,1)"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';fill:#003ca3;fill-opacity:1"
+               id="tspan1008-5-5">B</tspan></text>
+          <path
+             style="fill:#ff00af;stroke:#e50000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#TriangleStart)"
+             d="m 1105.2313,824.83336 -98.9878,-10e-6"
+             id="path4921"
+             sodipodi:nodetypes="cc" />
+          <text
+             style="font-size:40px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+             x="-980.12"
+             y="807.90869"
+             id="text16-7-3-3"
+             transform="scale(-1,1)"><tspan
+               sodipodi:role="line"
+               id="tspan2"
+               x="-980.12"
+               y="807.90869"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';fill:#000000;fill-opacity:1">gene</tspan><tspan
+               sodipodi:role="line"
+               x="-980.12"
+               y="859.75806"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';fill:#000000;fill-opacity:1"
+               id="tspan3">flow</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

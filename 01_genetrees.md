@@ -10,9 +10,9 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 
-We will use a dataset of Philippine puddle frogs (_Occidozyga laevis_ complex) from Chan et al. ([2021](https://doi.org/10.1093/sysbio/syab034)). It consists of genome-wide exons and introns obtained through sequence capture, however, we will only use a subset of XXX introns.
+We will use a dataset of Australasian monitor lizards (genus _Varanus_) from Pavón-Vázquez et al. ([2021](https://doi.org/10.1093/sysbio/syaa102)). It consists of 337 nuclear loci obtained through anchored hybrid enrchment, a technique for capturing orthologous regions of the genome.
 
-To estimate trees from these introns, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference based on maximum likelihood (ML). We will also estimate branch supports through Bootstrap
+To estimate trees from these loci, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference based on maximum likelihood (ML). We will also estimate branch supports through Bootstrap
 
 ## Download and install
 
@@ -62,10 +62,10 @@ This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on 
 
 ## Tree inference
 
-We will estimate a tree of one intron based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model):
+We will estimate a tree of one locus based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model):
 
 ```sh
-./raxmlHPC -s intron1.phylip -n stand -m GTRGAMMA -p 456745
+./raxmlHPC -s locus1.phylip -n stand -m GTRGAMMA -p 456745
 ```
 
 - `-s`: name of the sequence file (or path/name if the file is in a different folder)
@@ -85,7 +85,7 @@ The bootstrap is a statistical approach for assessing the accuracy of any estima
 The following code allows to infer a tree and estimate branch supports in a single run:
 
 ```sh
-./raxmlHPC -s intron1.phylip -n boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
+./raxmlHPC -s locus1.phylip -n boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 ```
 
 - `-f`: Specify the algorithm. If nothing is specified (like in our first run), by default it executes the standard hill climbing algorithm to perform the tree search (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run

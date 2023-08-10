@@ -94,4 +94,4 @@ The following code allows to infer a tree and estimate branch supports in a sing
 
 The Bootstrap trees (100 in the example) are written in `RAxML_bootstrap.boot` and the ML tree with support values is written in `RAxML_bipartitions.boot`.
 
-To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span> and on the left of the screen select: <button>Branch Labels</button> &rarr; <button>Display:</button> `label`.
+To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span> and on the left of the screen select: <button>Branch Labels</button> &rarr; <button>Display</button> &rarr; `label`.

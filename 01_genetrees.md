@@ -104,5 +104,5 @@ Let's estimate a tree for a different locus:
 Visualize both trees (`RAxML_bipartitions.256.boot` and `RAxML_bipartitions.256.boot`). Some of the phylogenetic relationships are different, what could be the reason/s?
 
 <p style="text-align:center;">
-    <img src="./assets/MLtrees.svg" width="60%"/>
+    <img src="./assets/MLtrees.svg" width="100%"/>
 </p>

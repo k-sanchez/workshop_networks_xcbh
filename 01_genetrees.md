@@ -65,24 +65,18 @@ This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on 
 We will estimate a tree of one locus based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model):
 
 ```sh
-./raxmlHPC -s locus1.phylip -n stand -m GTRGAMMA -p 456745
+./raxmlHPC -s locus177.phylip -n 177.stand -m GTRGAMMA -p 456745
 ```
 
 - `-s`: name of the sequence file (or path/name if the file is in a different folder)
-- `-n`: name of the output files (the files generated during the run will have `.stand` appended to the end)
+- `-n`: name of the output files (the files generated during the run will have `.177.stand` appended to the end)
 - `-m`: substitution model
 - `-p`: random number seed to generate parsimony starting tree (can be any integer)
 
 Further command options are detailed in the software manual.
 
-The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)) and, optionally, export in any image format.
+The maximum likelihood tree is printed in the `RAxML_bestTree.1.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)) and, optionally, export in any image format.
 
-Let's estimate a tree for a different locus:
-```sh
-./raxmlHPC -s locus2.phylip -n stand -m GTRGAMMA -p 66786
-```
-
-Visualize both trees. Some of the phylogenetic relationships are different, what could be the reason/s?
 
 ## Bootstrapping
 
@@ -91,13 +85,24 @@ The bootstrap is a statistical approach for assessing the accuracy of any estima
 The following code allows to infer a tree and estimate branch supports in a single run:
 
 ```sh
-./raxmlHPC -s locus1.phylip -n boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
+./raxmlHPC -s locus177.phylip -n 177.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 ```
 
 - `-f`: Specify the algorithm. If nothing is specified (like in our first run), by default it executes the standard hill climbing algorithm to perform the tree search (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run
 - `-N`: number of bootstrap replicates
 - `-x`: Specify an integer number (random seed) and turn on rapid bootstrapping
 
-The Bootstrap trees (100 in the example) are written in `RAxML_bootstrap.boot` and the ML tree with support values is written in `RAxML_bipartitions.boot`.
+The Bootstrap trees (100 in the example) are written in `RAxML_bootstrap.177.boot` and the ML tree with support values is written in `RAxML_bipartitions.177.boot`.
 
 To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span>, on the left-hand side of the screen select: <button>Branch Labels</button> &rarr; <button>Display</button> &rarr; `label`.
+
+Let's estimate a tree for a different locus:
+```sh
+./raxmlHPC -s locus256.phylip -n stand -m GTRGAMMA -p 66786
+```
+
+Visualize both trees (`RAxML_bipartitions.256.boot` and `RAxML_bipartitions.256.boot`). Some of the phylogenetic relationships are different, what could be the reason/s?
+
+<p style="text-align:center;">
+    <img src="./assets/MLtrees177.svg" width="30%"/>
+</p>

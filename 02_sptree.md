@@ -46,7 +46,7 @@ There are three ways to use PAUP:
 <span style="color: green">como preferís que usemos el software?</span>
 
 1. Interactively from a GUI (Graphical User Interface; i.e. an interface that uses icons, menus, and the mouse)
-2. Interactively in the terminal; i.e. entering commands one by one to read the data and execute the analysis
+2. Interactively in the terminal (CLI, command line interface); i.e. entering commands one by one to read the data and execute the analysis
 3. Including all the necessary commands in the sequence file and calling this file from the terminal to automatically read and execute the analysis
 
 

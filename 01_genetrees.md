@@ -75,8 +75,14 @@ We will estimate a tree of one locus based on the $\text{GTR} + \Gamma$ model of
 
 Further command options are detailed in the software manual.
 
-The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)).
+The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)) and, optionally, export in any image format.
 
+Let's estimate a tree for a different locus:
+```sh
+./raxmlHPC -s locus2.phylip -n stand -m GTRGAMMA -p 66786
+```
+
+Visualize both trees. Some of the phylogenetic relationships are different, what could be the reason/s?
 
 ## Bootstrapping
 
@@ -94,4 +100,4 @@ The following code allows to infer a tree and estimate branch supports in a sing
 
 The Bootstrap trees (100 in the example) are written in `RAxML_bootstrap.boot` and the ML tree with support values is written in `RAxML_bipartitions.boot`.
 
-To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span> and on the left of the screen select: <button>Branch Labels</button> &rarr; <button>Display</button> &rarr; `label`.
+To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span>, on the left-hand side of the screen select: <button>Branch Labels</button> &rarr; <button>Display</button> &rarr; `label`.

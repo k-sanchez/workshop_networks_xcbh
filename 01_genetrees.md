@@ -75,7 +75,7 @@ We will estimate a tree of one intron based on the $\text{GTR} + \Gamma$ model o
 
 Further command options are detailed in the software manual.
 
-The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file.
+The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download fron [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)).
 
 
 ## Bootstrapping
@@ -93,3 +93,5 @@ The following code allows to infer a tree and estimate branch supports in a sing
 - `-x`: Specify an integer number (random seed) and turn on rapid bootstrapping
 
 The Bootstrap trees (100 in the example) are written in `RAxML_bootstrap.boot` and the ML tree with support values is written in `RAxML_bipartitions.boot`.
+
+To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span> and on the left of the screen select: <button>Branch Labels</button> &rarr; <button>Display:</button> `label`.

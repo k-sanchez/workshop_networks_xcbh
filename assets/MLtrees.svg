@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   height="831.79858"
+   height="831.05609"
    version="1.1"
-   viewBox="0 0 1300.6413 831.79858"
-   width="1300.6414"
+   viewBox="0 0 1269.4632 831.05609"
+   width="1269.4633"
    x="0px"
    y="0px"
    id="svg97"
@@ -22,15 +22,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.43689097"
-     inkscape:cx="738.17044"
-     inkscape:cy="775.9373"
+     inkscape:zoom="0.21844549"
+     inkscape:cx="730.15929"
+     inkscape:cy="851.47102"
      inkscape:window-width="1368"
      inkscape:window-height="699"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g97" />
+     inkscape:current-layer="svg97" />
   <defs
      id="defs4">
     <clipPath
@@ -85,22 +85,22 @@
   <g
      clip-path="url(#clip-1277530112)"
      id="g5"
-     transform="translate(-314.88208,-26.410416)" />
+     transform="translate(-320.06023,-27.152916)" />
   <g
      clip-path="url(#clip-1322618880)"
-     transform="translate(525.11792,-26.410416)"
+     transform="translate(519.93977,-27.152916)"
      id="g6" />
   <g
      clip-path="url(#clip1503904977)"
-     transform="translate(525.11792,-26.410416)"
+     transform="translate(519.93977,-27.152916)"
      id="g7" />
   <g
      clip-path="url(#clip1900703744)"
-     transform="translate(533.11792,-26.410416)"
+     transform="translate(527.93977,-27.152916)"
      id="g8" />
   <g
      clip-path="url(#clip1119657984)"
-     transform="translate(255.11792,-389.41042)"
+     transform="translate(223.93977,-390.15292)"
      id="g51">
     <line
        style="fill:none;stroke:#000000;stroke-linecap:square;stroke-miterlimit:10"
@@ -443,14 +443,14 @@
   <g
      clip-path="url(#clip-1322618880)"
      id="g52"
-     transform="translate(-314.88208,-26.410416)" />
+     transform="translate(-320.06023,-27.152916)" />
   <g
      clip-path="url(#clip1172596387)"
      id="g53"
-     transform="translate(-314.88208,-26.410416)" />
+     transform="translate(-320.06023,-27.152916)" />
   <g
      clip-path="url(#clip1119657984)"
-     transform="translate(-414.32185,-389.41042)"
+     transform="translate(-419.5,-390.15292)"
      id="g97">
     <line
        style="fill:none;stroke:#000000;stroke-linecap:square;stroke-miterlimit:10"
@@ -797,23 +797,23 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.2;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:none;stroke:#848484;stroke-width:1.89"
-     x="116.44775"
-     y="21.5625"
+     x="111.2696"
+     y="20.82"
      id="text97"><tspan
        sodipodi:role="line"
        id="tspan97"
-       x="116.44775"
-       y="21.5625"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:none">ML tree locus 177</tspan></text>
+       x="111.2696"
+       y="20.82"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';fill:#000000;fill-opacity:1;stroke:none">ML tree locus 177</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.2;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;fill:none;stroke:#848484;stroke-width:1.89"
-     x="786.88751"
-     y="21.5625"
+     x="755.70935"
+     y="20.82"
      id="text97-3"><tspan
        sodipodi:role="line"
        id="tspan97-6"
-       x="786.88751"
-       y="21.5625"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:Arial;-inkscape-font-specification:Arial;fill:#000000;fill-opacity:1;stroke:none">ML tree locus 256</tspan></text>
+       x="755.70935"
+       y="20.82"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';fill:#000000;fill-opacity:1;stroke:none">ML tree locus 256</tspan></text>
 </svg>

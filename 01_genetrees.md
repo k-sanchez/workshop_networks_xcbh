@@ -75,7 +75,7 @@ We will estimate a tree of one intron based on the $\text{GTR} + \Gamma$ model o
 
 Further command options are detailed in the software manual.
 
-The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download fron [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)).
+The maximum likelihood tree is printed in the `RAxML_bestTree.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)).
 
 
 ## Bootstrapping

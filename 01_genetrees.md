@@ -85,7 +85,7 @@ The bootstrap is a statistical approach for assessing the accuracy of any estima
 The following code allows to infer a tree and estimate branch supports in a single run:
 
 ```sh
-./raxmlHPC -s intron1.phylip -n boot -m GTRGAMMA -f a -N 100 -p -x 563454
+./raxmlHPC -s intron1.phylip -n boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 ```
 
 - `-f`: Specify the algorithm. If nothing is specified (like in our first run), by default it executes the standard hill climbing algorithm to perform the tree search (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run

@@ -5,7 +5,11 @@ categories: jekyll update
 usemathjax: true
 ---
 
-Species tree estimation is mainly based on the multispecies coalescent model (MSC; citas). This model specifies the probabilities of different gene trees that are embedded in a species trees (<span style="color: green">expandir esto?</span>).
+Species tree estimation is mainly based on the multispecies coalescent model (MSC; [Liu et al. 2021](https://doi.org/10.1007/978-1-4939-9074-0_7)). This model specifies the probabilities of different gene trees that are embedded in a species trees.
+
+<p style="text-align:center;">
+    <img src="./assets/MSC.png" width="50%"/>
+</p>
 
 Species tree inference methods can be broadly classified into summary and full-likelihood approaches. The first class reduce the information in the sequences to summary statistics, while the second perform estimations directly from the alignments. As a result, the summary-based approaches are much more faster than full-likelihood methods. Here we will use two summary-based methods (also termed "heuristic approaches").
 
@@ -13,7 +17,7 @@ Species tree inference methods can be broadly classified into summary and full-l
 
 <span style="font-variant: small-caps;">astral</span> belongs to a family of species tree methods known as two-step because it uses estimated gene trees from sequence alignments. Here, we will use the maximum likelihood trees inferred from 1000 introns.
 
-Download the software from [GitHub](https://github.com/smirarab/ASTRAL/archive/refs/heads/master.zip), or
+Download the software from [GitHub](https://github.com/smirarab/ASTRAL/archive/refs/heads/master.zip), or type in the terminal:
 
 ```sh
 git clone https://github.com/smirarab/ASTRAL.git
@@ -28,11 +32,11 @@ java -jar astral.5.7.8.jar
 This will print the list of available options. If no errors are printed, the installation was succesfull. The following command estimates a species tree from input gene trees:
 
 ```sh
-java -jar astral.5.7.8.jar -i intron_trees.trees -o puddle_tree.tre
+java -jar astral.5.7.8.jar -i monitors_trees.tre -o monitor_sptree.tre
 ```
 
-- `i`: file containing input gene trees in newick format (a single file where each gene tree is in a different line)
-- `o`: filename for storing the output species tree
+- `-i`: file containing input gene trees in newick format (a single file where each gene tree is in a different line)
+- `-o`: filename for storing the output species tree
 
 
 ## SVDquartets
@@ -49,4 +53,9 @@ There are three ways to use PAUP:
 2. Interactively in the terminal (CLI, command line interface); i.e. entering commands one by one to read the data and execute the analysis
 3. Including all the necessary commands in the sequence file and calling this file from the terminal to automatically read and execute the analysis
 
+We will use the GUI. Open PAUP and load the file `liolaemus_snps.nex` containing the SNPs (go to <button>File</button> &rarr; `Open`). Next, define the outgroup sequence, it is `lineomaculatus`; go to <button>Data</button> &rarr; `Define outgroup` and select this taxa. To perform the SVDq analysis go to <button>Analysis</button> &rarr; `SVDQuartets`, the following window must appear: 
 
+![](./assets/paup.png)
+
+Select the same options and execute the analysis, it should be finish quick.
+A species tree with support values will appear on the screen, if you want to save this tree to a file go to <button>Trees</button> &rarr; `Save trees to file` and specify a name for the file.

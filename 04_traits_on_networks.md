@@ -27,7 +27,6 @@ df_shift = regressorHybrid(net1)
 # esta tabla muestra las ramas afectadas por la reticulacion (columnas shift_*),
 # la columna tipNames especifica las terminales afectadas
 
-# here you can include correlated spatial effects (alt, lat, long), or not
 df = innerjoin(select(traits, :sp, r"svl"),
                select(df_shift, Not(:sum)), # excludes the 'sum' column
                on = :sp => :tipNames) # join our data with shift predictors

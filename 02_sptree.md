@@ -7,8 +7,9 @@ usemathjax: true
 
 Species tree estimation is mainly based on the multispecies coalescent model (MSC; [Liu et al. 2021](https://doi.org/10.1007/978-1-4939-9074-0_7)). This model specifies the probabilities of different gene trees that are embedded in a species trees.
 
-<p style="text-align:center;">
+<p align="center">
     <img src="./assets/MSC.png" width="50%"/>
+    <figcaption>Modified from (<a href="https://doi.org/10.1007/978-1-4939-9074-0_7">Liu et al. 2021</a>)</figcaption>
 </p>
 
 Species tree inference methods can be broadly classified into summary and full-likelihood approaches. The first class reduce the information in the sequences to summary statistics, while the second perform estimations directly from the alignments. As a result, the summary-based approaches are much more faster than full-likelihood methods. Here we will use two summary-based methods (also termed "heuristic approaches").
@@ -53,7 +54,9 @@ There are three ways to use PAUP:
 
 We will use the GUI. Open PAUP and load the file `liolaemus_snps.nex` containing the SNPs (go to <button>File</button> &rarr; `Open`). Next, define the outgroup sequence, it is `lineomaculatus`; go to <button>Data</button> &rarr; `Define outgroup` and select this taxa. To perform the SVDq analysis go to <button>Analysis</button> &rarr; `SVDQuartets`, the following window must appear: 
 
-![](./assets/paup.png)
+<p align="center">
+    <img src="./assets/paup.png"/>
+</p>
 
 Select the same options and execute the analysis, it should be finish quickly.
 A species tree with support values will appear on the screen, if you want to save this tree to a file go to <button>Trees</button> &rarr; `Save trees to file` and specify a name for the file.

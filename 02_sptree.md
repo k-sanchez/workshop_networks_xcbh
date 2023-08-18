@@ -47,8 +47,6 @@ We will use a SNPs matrix collected through RADseq from species belonging to the
 
 There are three ways to use PAUP: 
 
-<span style="color: green">como preferís que usemos el software?</span>
-
 1. Interactively from a GUI (Graphical User Interface; i.e. an interface that uses icons, menus, and the mouse)
 2. Interactively in the terminal (CLI, command line interface); i.e. entering commands one by one to read the data and execute the analysis
 3. Including all the necessary commands in the sequence file and calling this file from the terminal to automatically read and execute the analysis
@@ -57,5 +55,5 @@ We will use the GUI. Open PAUP and load the file `liolaemus_snps.nex` containing
 
 ![](./assets/paup.png)
 
-Select the same options and execute the analysis, it should be finish quick.
+Select the same options and execute the analysis, it should be finish quickly.
 A species tree with support values will appear on the screen, if you want to save this tree to a file go to <button>Trees</button> &rarr; `Save trees to file` and specify a name for the file.

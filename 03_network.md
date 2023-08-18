@@ -18,7 +18,7 @@ Phylogenetic networks are an extension of phylogenetic trees used to model gene 
  
 A popular method to estimate phylogenetic networks is <span style="font-variant: small-caps;">PhyloNetworks</span> ([Solís-Lemus et al. 2017](https://doi.org/10.1093/molbev/msx235)). It is based on a pseudolikelihood function over concordance factors (CFs) of quartets of taxa (four taxa), wich increase computational tractability. CFs are calculated as the proportion of gene trees supporting the three possible splits in a given quartet:
  
- <p align="center">
+<p align="center">
     <img src="./assets/CFs.png"/>
     <figcaption><a href="https://doi.org/10.1093/sysbio/syaa005">Olave and Meyer 2020</a></figcaption>
 </p>

@@ -80,7 +80,7 @@ Further command options are detailed in the software manual.
 The maximum likelihood tree is printed in the `RAxML_bestTree.1.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)) and, optionally, export in any image format.
 
 >Note: If we want output files to be written in a specific folder, we have to execute <span style="font-variant: small-caps;">RAxML</span> in that folder.  
-Suppose that I want output files in a folder called `output/`, the above command :
+Suppose that I want output files in a folder called `output/`:
 ```sh
 cd output/
 path/to/raxmlHPC -s path/to/locus177.phylip -n 177.stand -m GTRGAMMA -p 456745

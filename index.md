@@ -10,4 +10,4 @@ layout: home
 
 Step-by-step tutorials covered in the workshop "Phylogenetic network reconstruction", part of the [X Congresso Brasileiro de Herpetologia](https://www.xcbh.com.br/) to be held in the city of Porto Seguro, State of Bahia (Brazil).
 
-The data and the results of the analyzes (in case some of you get stuck) can be downloaded from the repository (check the GitHub logo at the bottom of this page). These are included in the folders `data/` and `results/` respectively. The slides are hosted in the folder `slides/`. 
+The data and the results of the analyzes (in case some of you get stuck) can be downloaded from the repository (check the GitHub logo at the bottom of this page). These are included in the folders `data/` and `results/`, respectively. The slides are hosted in the folder `slides/`. 

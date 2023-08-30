@@ -23,10 +23,10 @@
      inkscape:document-units="pt"
      inkscape:zoom="1.4142136"
      inkscape:cx="211.77848"
-     inkscape:cy="171.11984"
-     inkscape:window-width="1368"
-     inkscape:window-height="699"
-     inkscape:window-x="0"
+     inkscape:cy="171.47339"
+     inkscape:window-width="1680"
+     inkscape:window-height="1014"
+     inkscape:window-x="1368"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg56" />
@@ -196,7 +196,7 @@
        id="tspan1"
        style="font-size:15px;fill:#0013a1;fill-opacity:1;stroke-width:2.83465"
        x="77.224777"
-       y="36.783916">especiación</tspan></text>
+       y="36.783916">speciation</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:15px;line-height:1.1;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-align:center;letter-spacing:0px;text-anchor:middle;fill:#0013a1;fill-opacity:1;stroke-width:2.83465"
@@ -206,22 +206,22 @@
        sodipodi:role="line"
        id="tspan1-7"
        style="font-size:15px;fill:#0013a1;fill-opacity:1;stroke-width:2.83465"
-       x="34.574871"
-       y="119.36316">especiación</tspan></text>
+       x="34.574875"
+       y="119.36316">speciation</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:15px;line-height:1.1;font-family:'Latin Modern Sans';-inkscape-font-specification:'Latin Modern Sans';text-align:center;letter-spacing:0px;text-anchor:middle;fill:#0013a1;fill-opacity:1;stroke-width:2.83465"
-     x="135.42564"
+     x="20.997101"
      y="160.83676"
      id="text1-6-3"><tspan
        sodipodi:role="line"
-       id="tspan1-7-5"
        style="font-size:15px;fill:#0013a1;fill-opacity:1;stroke-width:2.83465"
-       x="135.42564"
-       y="160.83676">flujo</tspan><tspan
+       x="20.997101"
+       y="160.83676"
+       id="tspan2">gene</tspan><tspan
        sodipodi:role="line"
        style="font-size:15px;fill:#0013a1;fill-opacity:1;stroke-width:2.83465"
-       x="135.42564"
+       x="20.997101"
        y="177.33676"
-       id="tspan2">génico</tspan></text>
+       id="tspan3">flow</tspan></text>
 </svg>

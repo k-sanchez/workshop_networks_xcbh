@@ -103,7 +103,7 @@ SNPs2CF(seqMatrix="liolaemus_snps.phy", ImapName="Imap.txt", outgroupSp="lineoma
          indels.as.fifth.state=F,  
          bootstrap=T, boots.rep=100, 
          outputName="SNPs2CF.csv",
-         n.quartets="all", between.sp.only=F,
+         n.quartets=100, between.sp.only=T,
          save.progress=F,
          cores=1)
 

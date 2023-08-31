@@ -29,7 +29,13 @@ Hence, it is required the estimation of gene trees to obtain the table of CFs re
 
 <span style="font-variant: small-caps;">PhyloNetworks</span> is a package of Julia, an interactive programming language (like R). To install Julia, go to [http://julialang.org/downloads/](http://julialang.org/downloads/).
 
-To install the package, type inside Julia:
+To install the package, first open a terminal and type:
+
+```sh
+julia
+```
+
+Now we are inside Julia. To install the package type:
 
 ```julia
 Pkg.add("PhyloNetworks");

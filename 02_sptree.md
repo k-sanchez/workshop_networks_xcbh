@@ -52,7 +52,7 @@ There are three ways to use PAUP:
 2. Interactively in the terminal (CLI, command line interface); i.e. entering commands one by one to read the data and execute the analysis
 3. Including all the necessary commands in the sequence file and calling this file from the terminal to automatically read and execute the analysis
 
-We will use the GUI. Open PAUP and load the file `liolaemus_snps.nex` containing the SNPs (go to <button>File</button> &rarr; `Open`). Next, define the outgroup sequence, it is `lineomaculatus`; go to <button>Data</button> &rarr; `Define outgroup` and select this taxa. To perform the SVDq analysis go to <button>Analysis</button> &rarr; `SVDQuartets`, the following window must appear: 
+Windows and Linux users can use the the GUI version that gives you an friendly interface (command line users, see below). Open PAUP and load the file `liolaemus_snps.nex` containing the SNPs (go to <button>File</button> &rarr; `Open`). Next, define the outgroup sequence, it is `lineomaculatus`; go to <button>Data</button> &rarr; `Define outgroup` and select this taxa. To perform the SVDq analysis go to <button>Analysis</button> &rarr; `SVDQuartets`, the following window must appear: 
 
 <p align="center">
     <img src="./assets/paup.png"/>
@@ -60,3 +60,31 @@ We will use the GUI. Open PAUP and load the file `liolaemus_snps.nex` containing
 
 Select the same options and execute the analysis, it should be finish quickly.
 A species tree with support values will appear on the screen, if you want to save this tree to a file go to <button>Trees</button> &rarr; `Save trees to file` and specify a name for the file.
+
+
+In case of looking to use a command line options, then simply open paup executable (double click), and type:
+
+```sh
+cd /my/path/to/data
+execute liolaemus_snps.nex
+```
+
+This will load the input data into PAUP. Then, define outgroup, run SVDquartets including 100 bootstrap pseudoreplicates and save the tree using the commands:
+
+```sh
+outgroup lineomaculatus_0 lineomaculatus_1;
+svdq evalQuartets=random nquartets=100000 taxpartition=species bootstrap=standard nreps=100 nthreads=2;
+rootTrees rootMethod=outgroup;
+savetrees file=SVDquartets.tre
+
+```
+- `outgroup`: define outgroup samples in the matrix
+- `svdq`: calls SVDquartets
+- `evalQuartets`: use "x" random quartets (number specified in the next flag)
+- `nquartets`: number of quartets to sample
+- `taxpartition`: this is the partition specifying the individual-species associations (already included at the bottom of the .nex matrix, you can check it Notepad)
+- `bootstrap`: performe standard bootstrap
+- `nreps`: number of pseudoreplicates for bootstrap support
+- `nthreads`: number threads to run in parallel
+- `rootTrees`: root tree using outgroup
+- `savetrees`: save trees under SVDquartets.tre name

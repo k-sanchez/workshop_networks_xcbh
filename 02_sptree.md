@@ -85,6 +85,6 @@ savetrees file=SVDquartets.tre
 - `taxpartition`: this is the partition specifying the individual-species associations (already included at the bottom of the .nex matrix, you can check it Notepad)
 - `bootstrap`: performe standard bootstrap
 - `nreps`: number of pseudoreplicates for bootstrap support
-- `nthreads`: number threads to run in parallel
+- `nthreads`: number of threads to run in parallel
 - `rootTrees`: root tree using outgroup
 - `savetrees`: save trees under SVDquartets.tre name

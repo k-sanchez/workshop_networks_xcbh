@@ -10,9 +10,9 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 
-We will use a dataset of Australasian monitor lizards (genus _Varanus_) from Pavón-Vázquez et al. ([2021](https://doi.org/10.1093/sysbio/syaa102)). It consists of 337 nuclear loci obtained through anchored hybrid enrchment, a technique for capturing orthologous regions of the genome.
+For gene tree reconstructions, we will use a dataset of Australasian monitor lizards (genus _Varanus_) from Pavón-Vázquez et al. ([2021](https://doi.org/10.1093/sysbio/syaa102)). It consists of 337 nuclear loci obtained through anchored hybrid enrchment, a technique for capturing orthologous regions of the genome.
 
-To estimate trees from these loci, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference based on maximum likelihood (ML). We will also estimate branch supports through Bootstrap
+To estimate trees from these loci, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference based on maximum likelihood (ML). We will also estimate node supports based on bootstrap calculations.
 
 ## Download and install the software
 
@@ -24,7 +24,7 @@ git clone https://github.com/stamatak/standard-RAxML.git
 
 to download the repository. Uncompress the `.zip` and move to the newly created folder.
 
-### Windows
+### Installing raxml in Windows
 
 Windows executables are already included in the folder. To run the software, open the command prompt (`cmd.exe`) and type the path to the executable
 
@@ -38,7 +38,7 @@ cd \path\to\raxml\WindowsExecutables_v8.2.10
 
 Be aware that Windows uses the backslash `\` as the path-component separator, while Unix uses the forward slash `/`.
 
-### Unix
+### Compiling raxml in Unix (Mac or Linux)
 
 First, we need to compile the software before it can be used.
 
@@ -62,7 +62,7 @@ This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on 
 # Error, you must specify a model of substitution with the "-m" option
 ```
 
-## Tree inference
+## Runniong raxml for gene tree inference
 
 We will estimate a tree of one locus based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model):
 

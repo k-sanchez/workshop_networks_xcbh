@@ -64,50 +64,40 @@ This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on 
 
 ## Runniong raxml for gene tree inference
 
-We will estimate a tree of one locus based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model):
+We will estimate a tree of one locus based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model), as well as calculate 100 bootstrap pseudoreplicates to asses node support. The bootstrap is a statistical approach for assessing the accuracy of any estimation (continuous parameters or clades in a tree); it consists of analyzing replicates of the original data. Its use in phylogenetic inference was introduced by Felsenstein ([1985](https://doi.org/10.1111/j.1558-5646.1985.tb00420.x)) to assess "confidence" for each clade in a tree. More specifically, in each of $N$ cycles ($N$ = 100 or 1000), the algorithm samples sites with replacement from the original alignment until the original number of sites is reached. A tree is estimated from each replicate, and the proportion of times that each clade is inferred provides a measure for its support. The support values are usually depicted in the maximum likelihood tree. 
 
-```sh
-./raxmlHPC -s locus177.phylip -n 177.stand -m GTRGAMMA -p 456745
-```
-
-- `-s`: name of the sequence file (or path/name if the file is in a different folder)
-- `-n`: name of the output files (the files generated during the run will have `.177.stand` appended to the end)
-- `-m`: substitution model
-- `-p`: random number seed to generate parsimony starting tree (can be any integer)
-
-Further command options are detailed in the software manual.
-
-The maximum likelihood tree is printed in the `RAxML_bestTree.1.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)) and, optionally, export in any image format.
-
->Note: If we want output files to be written in a specific folder, we have to execute <span style="font-variant: small-caps;">RAxML</span> in that folder.  
-Suppose that I want output files in a folder called `output/`:
-```sh
-cd output/
-path/to/raxmlHPC -s path/to/locus177.phylip -n 177.stand -m GTRGAMMA -p 456745
-```
-To simplify this command, you can add the <span style="font-variant: small-caps;">RAxML</span> executable to the path ([follow this guide](https://zwbetz.com/how-to-add-a-binary-to-your-path-on-macos-linux-windows/)). This allows to execute the program from any directory.
-
-## Bootstrapping
-
-The bootstrap is a statistical approach for assessing the accuracy of any estimation (continuous parameters or clades in a tree); it consists of analyzing replicates of the original data. Its use in phylogenetic inference was introduced by Felsenstein ([1985](https://doi.org/10.1111/j.1558-5646.1985.tb00420.x)) to assess "confidence" for each clade in a tree. More specifically, in each of $N$ cycles ($N$ = 100 or 1000), the algorithm samples sites with replacement from the original alignment until the original number of sites is reached. A tree is estimated from each replicate, and the proportion of times that each clade is inferred provides a measure for its support. The support values are usually depicted in the maximum likelihood tree.
-
-The following code allows to infer a ML tree and estimate branch supports in a single run:
+The following code allows to infer a ML tree and estimate node supports in a single run:
 
 ```sh
 ./raxmlHPC -s locus177.phylip -n 177.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 ```
 
+- `-s`: name of the sequence file (or path/name if the file is in a different folder)
+- `-n`: name of the output files (the files generated during the run will have `.177.stand` appended to the end)
+- `-m`: substitution model
 - `-f`: Specify one of the different algorithms available in <span style="font-variant: small-caps;">RAxML</span>. If nothing is specified (like in our first run), by default it executes the standard hill climbing algorithm to perform the tree search (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run
-- `-N`: number of bootstrap replicates
+- `-N`: number of bootstrap pseudoreplicates
+- `-p`: random number seed to generate parsimony starting tree (can be any integer)
 - `-x`: Specify an integer number (random seed) and turn on rapid bootstrapping
 
-The Bootstrap trees (100 according to the example) are written in `RAxML_bootstrap.177.boot` and the ML tree with support values is written in `RAxML_bipartitions.177.boot`.
+Further command options are detailed in the software manual, or can be explored using:
+```sh
+./raxmlHPC -help
+```
 
-To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span>. On the left-hand side of the screen select: <button>Branch Labels</button> &rarr; <button>Display</button> &rarr; `label`.
+The maximum likelihood tree is printed in the `RAxML_bestTree.1.stand` file. We can visualize the tree in <span style="font-variant: small-caps;">FigTree</span> (download from [here](https://github.com/rambaut/figtree/releases/tag/v1.4.4)) and, optionally, export in any image format. To visualize this tree and the support values open the file in <span style="font-variant: small-caps;">FigTree</span>. On the left-hand side of the screen select: <button>Branch Labels</button> &rarr; <button>Display</button> &rarr; `label`.
+
+>Note: If we want output files to be written in a specific folder, we have to execute <span style="font-variant: small-caps;">RAxML</span> in that folder.  
+Suppose that I want output files in a folder called `output/`:
+```sh
+cd output/
+path/to/raxmlHPC -s path/to/locus177.phylip -n 177.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
+```
+To simplify this command, you can add the <span style="font-variant: small-caps;">RAxML</span> executable to the path ([follow this guide](https://zwbetz.com/how-to-add-a-binary-to-your-path-on-macos-linux-windows/)). This allows to execute the program from any directory.
 
 Let's estimate a tree for a different locus:
 ```sh
-./raxmlHPC -s locus256.phylip -n stand -m GTRGAMMA -p 66786
+./raxmlHPC -s locus256.phylip -n 256.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 ```
 
 Visualize both trees (`RAxML_bipartitions.177.boot` and `RAxML_bipartitions.256.boot`). You can download FigTree program from [here](http://tree.bio.ed.ac.uk/software/figtree/). 

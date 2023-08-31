@@ -112,10 +112,7 @@ SNPs2CF(seqMatrix="liolaemus_snps.phy", ImapName="Imap.txt", outgroupSp="lineoma
 Once you got the CF table, now you are ready to get a network using PhyloNetworks! Return to Julia and run
 
 ```julia
-CFtable = readTableCF("SNPs2CF.csv")
-
-sppTree_file = "starting_tree.tre";
-sppTree = readTopology(sppTree_file);
+CF = readTableCF("SNPs2CF.csv")
 ```
 ## Network estimation
 
@@ -128,8 +125,8 @@ sppTree = readTopology("SVDquartets.tre");
 Now we are ready to estimate a network. This will be accomplished with the `snaq!()` function. It estimates a network that fits observed quartet concordance factors (CFs) using maximum pseudo-likelihood. The argument `hmax` determines the maximum number of hybridizations allowed.
 
 ```julia
-net_h0 = snaq!(sppTree, CFtable, hmax = 0, filename = "net0", runs = 1)
-net_h1 = snaq!(net_h0, CFtable, hmax = 1, filename = "net1", runs = 1)
+net_h0 = snaq!(sppTree, CF, hmax = 0, filename = "net0", runs = 1)
+net_h1 = snaq!(net_h0, CF, hmax = 1, filename = "net1", runs = 1)
 ```
 
 Let's take a look to the obtained network

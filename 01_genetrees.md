@@ -124,6 +124,6 @@ It is possible to automatically set a run for all 388 gene trees using the code 
 ```sh
 for i in {1..388}
 do
-../raxml -s L_$i.phy -n $i.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
+../raxmlHPC -s L_$i.phy -n $i.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 done
 ```

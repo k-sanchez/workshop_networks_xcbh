@@ -95,6 +95,10 @@ Now, open Rstudio and run this code
 source("my/path/to/functions.R")
 setwd("my/path/to/working/directory")
 
+#install packages
+install.packages("foreach", "doMC")
+library("foreach", "doMC")
+
 # function to convert vcf into phylip format
 vcf2phylip(wd=getwd(), vcf.name="liolaemus_snps.vcf", total.SNPs=8645, random.phase = T, replace.missing = T, output.name=NULL, cores=1)
 

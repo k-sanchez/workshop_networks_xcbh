@@ -5,16 +5,16 @@ categories: jekyll update
 usemathjax: true
 ---
 
-Species tree estimation is mainly based on the multispecies coalescent model (MSC; [Liu et al. 2021](https://doi.org/10.1007/978-1-4939-9074-0_7)). This model specifies the probabilities of different gene trees that are embedded in a species trees.
+Species tree estimation is mainly based on the multispecies coalescent model (MSC; [Liu et al. 2021](https://doi.org/10.1007/978-1-4939-9074-0_7)). This model accomodates gene trees within species trees.
 
 <p align="center">
     <img src="./assets/MSC.png" width="50%"/>
     <figcaption>Modified from (<a href="https://doi.org/10.1007/978-1-4939-9074-0_7">Liu et al. 2021</a>)</figcaption>
 </p>
 
-Species tree inference methods can be broadly classified into summary and full-likelihood approaches. The first class reduce the information in the sequences to summary statistics, while the second perform estimations directly from the alignments. As a result, the summary-based approaches are much more faster than full-likelihood methods. Here we will use two summary-based methods (also termed "heuristic approaches").
+Species tree inference methods can be broadly classified into summary and full-likelihood approaches. The first class reduce the information in the sequences to summary statistics, while the second perform estimations directly from the alignments. As a result, the summary-based approaches are much more faster than full-likelihood methods. Here we will use two summary-based methods (also termed "heuristic approaches"), one of them takes previously reconstructed gene trees as input data (ASTRAL), and the other one (SVDquartets) can work with single-nucleotide-polymorphism (SNPs) datasets directly (i.e., gene tree inference is not needed).
 
-## ASTRAL
+## Species tree inference based on gene tree input data: ASTRAL
 
 <span style="font-variant: small-caps;">astral</span> belongs to a family of species tree methods known as two-step because it uses estimated gene trees from sequence alignments. Here, we will use the maximum likelihood trees inferred from 1000 introns.
 
@@ -40,7 +40,7 @@ java -jar astral.5.7.8.jar -i monitors_trees.tre -o monitor_sptree.tre
 - `-o`: filename for storing the output species tree
 
 
-## SVDquartets
+## Species tree inference based on SNP data: SVDquartets
 
 `svdquartets` is an algorithm that computes species trees directly from SNP data. However, it is not a full-likelihood approach since the data is summarized as pooled site-pattern counts. This algorithm is implemented in <span style="font-variant: small-caps;">PAUP*</span> (it can be downloaded from [http://phylosolutions.com/paup-test/](http://phylosolutions.com/paup-test/)).
 

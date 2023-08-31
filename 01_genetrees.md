@@ -110,10 +110,20 @@ Let's estimate a tree for a different locus:
 ./raxmlHPC -s locus256.phylip -n stand -m GTRGAMMA -p 66786
 ```
 
-Visualize both trees (`RAxML_bipartitions.177.boot` and `RAxML_bipartitions.256.boot`). Some of the phylogenetic relationships are different, what could be the reason/s?
+Visualize both trees (`RAxML_bipartitions.177.boot` and `RAxML_bipartitions.256.boot`). You can download FigTree program from [here](http://tree.bio.ed.ac.uk/software/figtree/). 
+Some of the phylogenetic relationships are different, what could be the reason/s?
 
 <p style="text-align:center;">
     <img src="./assets/MLtrees.svg" width="80%"/>
 </p>
 
 >*Varanus komodoensis* is the famous Komodo dragon.
+
+## Automatizing gene tree inference using a loop
+It is possible to automatically set a run for all 388 gene trees using the code for a loop. Note that all .phy in the dataset folder are named L_1.phy, L_2.phy ... L_388.phy. Thus, we can set a loop with an interator i taking values from 1 to 388 to call all the input .phy into raxml:
+```sh
+for i in {1..388}
+do
+../raxml -s L_$i.phy -n $i.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
+done
+```

@@ -143,3 +143,13 @@ net_h1.names # explore the names of the terminals
 rootatnode!(net_h1, "lineomaculatus") # root at the outgroup node
 plot(net_h1, showgamma = true, style = :majortree, arrowlen = 0.2) # plot again
 ```
+
+## Compute Bootstrap on network
+To asses uncertainty, we can compute bootstrap calculation based on the confidence intervals at the CF table
+
+```julia
+using DataFrames, CSV
+CF = DataFrame(CSV.File("SNPs2CF.csv"); copycols = false)
+bootnet = bootsnaq(net_h1, CF, hmax=1, filename="bootstrap")
+```
+

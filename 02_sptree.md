@@ -18,7 +18,7 @@ Species tree inference methods can be broadly classified into summary and full-l
 
 <span style="font-variant: small-caps;">astral</span> belongs to a family of species tree methods known as two-step because it uses estimated gene trees from sequence alignments. Here, we will use the maximum likelihood trees inferred from 1000 introns.
 
-Download the software from [GitHub](https://github.com/smirarab/ASTRAL/archive/refs/heads/master.zip), or type in the terminal:
+Download the software from [GitHub](https://github.com/smirarab/ASTRAL/archive/refs/heads/master.zip), or in Unix you can type in the terminal:
 
 ```sh
 git clone https://github.com/smirarab/ASTRAL.git

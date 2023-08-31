@@ -10,3 +10,6 @@ This is a complete tutorial for the workshop "Phylogenetic Network reconstructio
 03_network.md: tutorial for phylogenetic network estimation using PhyloNetworks (gene trees and SNPs)
 
 04_trait_on_Networks.md: tutorial to test transgressive evolution of traits on networks and ancestral states reconstructions
+
+## External links
+Also note that there are very good tutorials available on [PhyloNetworks website](https://crsl4.github.io/PhyloNetworks.jl/latest/)

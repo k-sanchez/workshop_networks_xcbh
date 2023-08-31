@@ -148,7 +148,7 @@ rootatnode!(net_h1, "lineomaculatus") # root at the outgroup node
 plot(net_h1, showgamma = true, style = :majortree, arrowlen = 0.2) # plot again
 ```
 
-## Compute Bootstrap on network
+## Compute Bootstrap on networks
 To asses uncertainty, we can compute bootstrap calculation based on the confidence intervals at the CF table
 
 ```julia

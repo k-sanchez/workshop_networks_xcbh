@@ -79,6 +79,7 @@ CSV.write("CF_fromGeneTrees.csv", df)
 CF = readTableCF("CF_fromGeneTreesF.csv")
 ```
 
+>Nota: Está la opción de usar `readTrees2CF("monitors_trees.tre")` directamente para obtener la tabla de CF
 
 ## Calculation of Concordance Factors from SNP data
 

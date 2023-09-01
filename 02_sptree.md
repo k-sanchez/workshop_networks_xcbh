@@ -75,7 +75,7 @@ This will load the input data into PAUP. Then, define outgroup, run SVDquartets 
 outgroup lineomaculatus_0 lineomaculatus_1;
 svdq evalQuartets=random nquartets=100000 taxpartition=species bootstrap=standard nreps=100 nthreads=2;
 rootTrees rootMethod=outgroup;
-savetrees file=SVDquartets.tre format=Newick
+savetrees file=SVDquartets.tre format=Newick brlens=yes
 
 ```
 - `outgroup`: define outgroup samples in the matrix

@@ -25,8 +25,8 @@ The data frame contains morphometric data of different Liolaemus species. Now, w
 
 ```julia
 ## Transgressive evolution test ##
-	df_shift = regressorHybrid(net1)
-	dat = innerjoin(traits, df_shift, on=:tipNames)
+df_shift = regressorHybrid(net1)
+dat = innerjoin(traits, df_shift, on=:tipNames)
 	
 fit_sh = phylolm(@formula(svl ~ shift_3), dat, net1;
 	tipnames=:tipNames,  reml=false)
@@ -42,5 +42,18 @@ lrtest(fit_sh, fit_null)
 ```
 
 Result is not significant (sorry no fancy result here!)
+
+## Ancestral state reconstructions
+Given a network, it is also possible to estimate ancestral state of traits. It is very simple, just follow:
+```julia
+fitTrait1 = phylolm(@formula(svl ~ 1), traits, net1; tipnames=:tipNames)
+
+# ancestral rec
+ancTrait1Approx = ancestralStateReconstruction(fitTrait1)
+
+#Plot
+plot(net1, :R, nodeLabel = expectationsPlot(ancTrait1Approx));
+
+```
 
 

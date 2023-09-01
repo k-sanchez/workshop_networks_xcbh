@@ -59,7 +59,7 @@ Windows and Linux users can use the the GUI version that gives you an friendly i
 </p>
 
 Select the same options and execute the analysis, it should be finish quickly.
-A species tree with support values will appear on the screen, if you want to save this tree to a file go to <button>Trees</button> &rarr; `Save trees to file` and specify a name for the file.
+A species tree with support values will appear on the screen, if you want to save this tree to a file go to <button>Trees</button> &rarr; `Save trees to file`, specify a name for the file and select the Newick format at the bottom of the window.
 
 
 In case of looking to use a command line options, then simply open paup executable (double click), and type:

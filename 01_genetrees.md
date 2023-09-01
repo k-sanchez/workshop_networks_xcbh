@@ -10,7 +10,7 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
 
 
-For gene tree reconstructions, we will use a dataset of Australasian monitor lizards (genus _Varanus_) from Pavón-Vázquez et al. ([2021](https://doi.org/10.1093/sysbio/syaa102)). It consists of 337 nuclear loci obtained through anchored hybrid enrchment, a technique for capturing orthologous regions of the genome.
+For gene tree reconstructions, we will use a dataset of Australasian monitor lizards (genus _Varanus_) from Pavón-Vázquez et al. ([2021](https://doi.org/10.1093/sysbio/syaa102)). It consists of 388 nuclear loci obtained through anchored hybrid enrchment, a technique for capturing orthologous regions of the genome.
 
 To estimate trees from these loci, we will rely on <span style="font-variant: small-caps;">RAxML</span>, a program for efficient tree inference based on maximum likelihood (ML). We will also estimate node supports based on bootstrap calculations.
 
@@ -24,7 +24,7 @@ git clone https://github.com/stamatak/standard-RAxML.git
 
 to download the repository. Uncompress the `.zip` and move to the newly created folder.
 
-### Installing raxml in Windows
+### Installing <span style="font-variant: small-caps;">RAxML</span> in Windows
 
 Windows executables are already included in the folder. To run the software, open the command prompt (`cmd.exe`) and type the path to the executable
 
@@ -38,7 +38,7 @@ cd \path\to\raxml\WindowsExecutables_v8.2.10
 
 Be aware that Windows uses the backslash `\` as the path-component separator, while Unix uses the forward slash `/`.
 
-### Compiling raxml in Unix (Mac or Linux)
+### Compiling <span style="font-variant: small-caps;">RAxML</span> in Unix (Mac or Linux)
 
 First, we need to compile the software before it can be used.
 
@@ -62,7 +62,7 @@ This will create an executable `raxmlHPC` (or `raxmlHPC-PTHREADS`, depending on 
 # Error, you must specify a model of substitution with the "-m" option
 ```
 
-## Runniong raxml for gene tree inference
+## Running <span style="font-variant: small-caps;">RAxML</span> for gene tree inference
 
 We will estimate a tree of one locus based on the $\text{GTR} + \Gamma$ model of [nucleotide substitution](https://en.wikipedia.org/wiki/Substitution_model), as well as calculate 100 bootstrap pseudoreplicates to asses node support. The bootstrap is a statistical approach for assessing the accuracy of any estimation (continuous parameters or clades in a tree); it consists of analyzing replicates of the original data. Its use in phylogenetic inference was introduced by Felsenstein ([1985](https://doi.org/10.1111/j.1558-5646.1985.tb00420.x)) to assess "confidence" for each clade in a tree. More specifically, in each of $N$ cycles ($N$ = 100 or 1000), the algorithm samples sites with replacement from the original alignment until the original number of sites is reached. A tree is estimated from each replicate, and the proportion of times that each clade is inferred provides a measure for its support. The support values are usually depicted in the maximum likelihood tree. 
 
@@ -72,13 +72,13 @@ The following code allows to infer a ML tree and estimate node supports in a sin
 ./raxmlHPC -s locus177.phylip -n 177.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 ```
 
-- `-s`: name of the sequence file (or path/name if the file is in a different folder)
+- `-s`: name of the sequence file (include the path to the file if it is located in a different folder)
 - `-n`: name of the output files (the files generated during the run will have `.177.stand` appended to the end)
 - `-m`: substitution model
 - `-f`: Specify one of the different algorithms available in <span style="font-variant: small-caps;">RAxML</span>. If nothing is specified (like in our first run), by default it executes the standard hill climbing algorithm to perform the tree search (which is equivalent to `-f d`). The `a` option tells <span style="font-variant: small-caps;">RAxML</span> to conduct a rapid Bootstrap analysis and search for the best-scoring ML tree in a single run
 - `-N`: number of bootstrap pseudoreplicates
-- `-p`: random number seed to generate parsimony starting tree (can be any integer)
-- `-x`: Specify an integer number (random seed) and turn on rapid bootstrapping
+- `-p`: random number seed to generate a parsimony starting tree (can be any integer)
+- `-x`: specify an integer number (random seed) and turn on rapid bootstrapping
 
 Further command options are detailed in the software manual, or can be explored using:
 ```sh
@@ -100,8 +100,7 @@ Let's estimate a tree for a different locus:
 ./raxmlHPC -s locus256.phylip -n 256.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 ```
 
-Visualize both trees (`RAxML_bipartitions.177.boot` and `RAxML_bipartitions.256.boot`). You can download FigTree program from [here](http://tree.bio.ed.ac.uk/software/figtree/). 
-Some of the phylogenetic relationships are different, what could be the reason/s?
+Visualize both trees (`RAxML_bipartitions.177.boot` and `RAxML_bipartitions.256.boot`). Some of the phylogenetic relationships are different, what could be the reason/s?
 
 <p style="text-align:center;">
     <img src="./assets/MLtrees.svg" width="80%"/>
@@ -110,10 +109,11 @@ Some of the phylogenetic relationships are different, what could be the reason/s
 >*Varanus komodoensis* is the famous Komodo dragon.
 
 ## Automatizing gene tree inference using a loop
-It is possible to automatically set a run for all 388 gene trees using the code for a loop. Note that all .phy in the dataset folder are named L_1.phy, L_2.phy ... L_388.phy. Thus, we can set a loop with an interator i taking values from 1 to 388 to call all the input .phy into raxml:
+It is possible to automatically set a run for all 388 gene trees using the code for a loop. Note that all `.phy` in the dataset folder are named `L_1.phy`, `L_2.phy` ... `L_388.phy`. Thus, we can set a loop with an iterator `i` taking values from 1 to 388 to call all the input `.phy` into <span style="font-variant: small-caps;">RAxML</span>:
+
 ```sh
 for i in {1..388}
 do
-../raxmlHPC -s L_$i.phy -n $i.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
+./raxmlHPC -s L_$i.phy -n $i.boot -m GTRGAMMA -f a -N 100 -p 2334 -x 563454
 done
 ```

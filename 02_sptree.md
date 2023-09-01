@@ -5,18 +5,18 @@ categories: jekyll update
 usemathjax: true
 ---
 
-Species tree estimation is mainly based on the multispecies coalescent model (MSC; [Liu et al. 2021](https://doi.org/10.1007/978-1-4939-9074-0_7)). This model accomodates gene trees within species trees.
+Species tree estimation is mainly based on the multispecies coalescent model (MSC; [Liu et al. 2021](https://doi.org/10.1007/978-1-4939-9074-0_7)). This model accomodates gene trees within species trees, while allowing for incomplete lineage sorting (ILS).
 
 <p align="center">
     <img src="./assets/MSC.png" width="50%"/>
     <figcaption>Modified from (<a href="https://doi.org/10.1007/978-1-4939-9074-0_7">Liu et al. 2021</a>)</figcaption>
 </p>
 
-Species tree inference methods can be broadly classified into summary and full-likelihood approaches. The first class reduce the information in the sequences to summary statistics, while the second perform estimations directly from the alignments. As a result, the summary-based approaches are much more faster than full-likelihood methods. Here we will use two summary-based methods (also termed "heuristic approaches"), one of them takes previously reconstructed gene trees as input data (ASTRAL), and the other one (SVDquartets) can work with single-nucleotide-polymorphism (SNPs) datasets directly (i.e., gene tree inference is not needed).
+Species tree inference methods can be broadly classified into summary (also termed "heuristic") and full-likelihood approaches. The first class reduce the information in the sequences to summary statistics, while the second perform estimations directly from the alignments. As a result, the summary-based approaches are much more faster than full-likelihood methods. Here, we will use two summary-based methods, one of them takes previously reconstructed gene trees as input data (ASTRAL), and the other one (SVDquartets) can work with single-nucleotide-polymorphism (SNPs) datasets directly (i.e., gene tree inference is not needed).
 
 ## Species tree inference based on gene tree input data: ASTRAL
 
-<span style="font-variant: small-caps;">astral</span> belongs to a family of species tree methods known as two-step because it uses estimated gene trees from sequence alignments. Here, we will use the maximum likelihood trees inferred from 1000 introns.
+<span style="font-variant: small-caps;">astral</span> belongs to a family of species tree methods known as two-step because it uses estimated gene trees from sequence alignments. Here, we will use the maximum likelihood trees inferred from the 388 alignments.
 
 Download the software from [GitHub](https://github.com/smirarab/ASTRAL/archive/refs/heads/master.zip), or in Unix you can type in the terminal:
 
@@ -38,6 +38,9 @@ java -jar astral.5.7.8.jar -i monitors_trees.tre -o monitor_sptree.tre
 
 - `-i`: file containing input gene trees in newick format (a single file where each gene tree is in a different line)
 - `-o`: filename for storing the output species tree
+
+As this method estimates an unrooted tree, it is advisable to include a known outgroup species.
+
 
 
 ## Species tree inference based on SNP data: SVDquartets
@@ -82,9 +85,9 @@ savetrees file=SVDquartets.tre format=Newick brlens=yes
 - `svdq`: calls SVDquartets
 - `evalQuartets`: use "x" random quartets (number specified in the next flag)
 - `nquartets`: number of quartets to sample
-- `taxpartition`: this is the partition specifying the individual-species associations (already included at the bottom of the .nex matrix, you can check it Notepad)
+- `taxpartition`: this is the partition specifying the individual-species associations (already included at the bottom of the `.nex` matrix, you can check this in a text editor, e.g. Notepad)
 - `bootstrap`: performe standard bootstrap
 - `nreps`: number of pseudoreplicates for bootstrap support
 - `nthreads`: number of threads to run in parallel
 - `rootTrees`: root tree using outgroup
-- `savetrees`: save trees under SVDquartets.tre name
+- `savetrees`: save trees under `SVDquartets.tre` name

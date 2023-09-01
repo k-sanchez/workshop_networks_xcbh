@@ -58,7 +58,7 @@ We loaded a tree but is says it is a network. This is not an error, by definitio
 
 ## Calculation of Concordance Factors using gene trees
 
-To compute CF from gene trees we will use the 388 gene trees we estimated using RAxML. The file monitors_trees.tre has all 388 gene trees in newick format. Load them into Julia using:
+To compute CF from gene trees we will use the 388 gene trees we estimated using RAxML. The file `monitors_trees.tre` has all 388 gene trees in [Newick format](https://en.wikipedia.org/wiki/Newick_format). Load them into Julia using:
 
 ```julia
 cd("my/path/here")
@@ -73,8 +73,7 @@ This function automatically computes the CF table from the gene trees and export
 
 ## Calculation of Concordance Factors from SNP data
 
-
-It is also possible to get a CF table overpassing gene tree reconstructions, by simply having SNP data as input. Note that each SNP is assumed to be unlinked. Thus, if you have a dataset such as RADseq you want to randomly sample one SNP per locus. For whole genome sequences, sample one SNP separated far enough to reduce linkage, for example 1 SNP every 10 Kb or 50 Kb. 
+It is also possible to get a CF table bypassing gene tree reconstructions, by simply having SNP data as input. Note that each SNP is assumed to be unlinked. Thus, if you have a dataset such as RADseq you want to randomly sample one SNP per locus. For whole genome sequences, sample one SNP separated far enough to reduce linkage, for example 1 SNP every 10 Kb or 50 Kb. 
 
 Different R functions were developed to compute the table of CFs directly from a SNPs matrix ([Olave and Meyer 2020](https://doi.org/10.1093/sysbio/syaa005)), which we will be using here on the *Liolaemus* dataset.
 
@@ -94,14 +93,13 @@ library("foreach", "doMC")
 vcf2phylip(wd=getwd(), vcf.name="liolaemus_snps.vcf", total.SNPs=8645, random.phase = T, replace.missing = T, output.name=NULL, cores=1)
 
 #calculate CF
-SNPs2CF(seqMatrix="liolaemus_snps.phy", ImapName="Imap.txt", outgroupSp="lineomaculatus",
-         indels.as.fifth.state=F,  
-         bootstrap=T, boots.rep=100, 
-         outputName="SNPs2CF.csv",
-         n.quartets=100, between.sp.only=T,
-         save.progress=F,
-         cores=1)
-
+SNPs2CF(seqMatrix = "liolaemus_snps.phy", ImapName = "Imap.txt", outgroupSp = "lineomaculatus",
+         indels.as.fifth.state = FALSE,  
+         bootstrap = TRUE, boots.rep = 100, 
+         outputName = "SNPs2CF.csv",
+         n.quartets = 100, between.sp.only = TRUE,
+         save.progress = FALSE,
+         cores = 1)
 ```
 
 Once you got the CF table, now you are ready to get a network using PhyloNetworks! Return to Julia and run
@@ -145,6 +143,6 @@ To asses uncertainty, we can compute bootstrap calculation based on the confiden
 ```julia
 using DataFrames, CSV
 CF = DataFrame(CSV.File("SNPs2CF.csv"); copycols = false)
-bootnet = bootsnaq(net_h1, CF, hmax=1, filename="bootstrap")
+bootnet = bootsnaq(net_h1, CF, hmax = 1, filename = "bootstrap_nets")
 ```
 

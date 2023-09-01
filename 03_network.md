@@ -58,7 +58,7 @@ We loaded a tree but is says it is a network. This is not an error, by definitio
 
 ## Calculation of Concordance Factors using gene trees
 
-To compute CF from gene trees we will use the 388 gene trees we estimated using raxml. The file monitors_trees.tre has all 388 gene trees in newick format. Load them into Julia using:
+To compute CF from gene trees we will use the 388 gene trees we estimated using RAxML. The file monitors_trees.tre has all 388 gene trees in newick format. Load them into Julia using:
 
 ```julia
 cd("my/path/here")
@@ -67,19 +67,9 @@ genetrees = readMultiTopology("monitors_trees.tre")
 
 Now we can compute the CFs using
 ```julia
-q,t = countquartetsintrees(genetrees);
+CF = readTrees2CF("monitors_trees.tre")
 ```
-
-Now lets create a data frame with the obtained q and t, and export the CF table.
-
-```julia
-df = writeTableCF(q,t)
-using CSV
-CSV.write("CF_fromGeneTrees.csv", df)
-CF = readTableCF("CF_fromGeneTreesF.csv")
-```
-
->Nota: Está la opción de usar `readTrees2CF("monitors_trees.tre")` directamente para obtener la tabla de CF
+This function automatically computes the CF table from the gene trees and exports a file called `tableCF.txt`
 
 ## Calculation of Concordance Factors from SNP data
 

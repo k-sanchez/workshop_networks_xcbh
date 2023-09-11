@@ -82,12 +82,12 @@ savetrees file=SVDquartets.tre format=Newick brlens=yes
 ```
 
 - `outgroup`: define outgroup samples in the matrix
-- `svdq`: calls SVDquartets
+- `svdq`: calls the SVDquartets algorithm
 - `evalQuartets`: use "x" random quartets (number specified in the next flag)
 - `nquartets`: number of quartets to sample
-- `taxpartition`: this is the partition specifying the individual-species associations (already included at the bottom of the `.nex` matrix, you can check this in a text editor, e.g. Notepad)
-- `bootstrap`: performe standard bootstrap
+- `taxpartition`: this is the partition that specifies the individual-species associations (already included at the bottom of the `.nex` matrix, you can check this in a text editor, e.g. Notepad)
+- `bootstrap`: perform standard bootstrap
 - `nreps`: number of pseudoreplicates for bootstrap support
 - `nthreads`: number of threads to run in parallel
-- `rootTrees`: root tree using outgroup
+- `rootTrees`: root tree using the outgroup
 - `savetrees`: save trees under `SVDquartets.tre` name
